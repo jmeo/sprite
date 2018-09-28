@@ -70,7 +70,7 @@ var sprite = function(file, options){
 					imgPath = path.join(paths, path.dirname(url)),
 					imgFullPath = fixPath(path.join(imgPath, imgName));
 
-				if(!sliceHash[imgFullPath] && fixPath(imgPath) === slicePath && unit.file.exists(imgFullPath)){
+				if(!sliceHash[imgFullPath] && fixPath(imgPath).indexOf(slicePath) >= 0 && unit.file.exists(imgFullPath)){
 					sliceHash[imgFullPath] = true;
 					sliceList[inx++] = imgFullPath;
 				}
